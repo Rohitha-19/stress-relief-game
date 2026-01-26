@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EMOTIA – Calm Zone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🌿 EMOTIA – Calm Zone</h1>
+  <p id="emotion">Emotion: Calm 😊</p>
+  <p id="message" class="message">Take a deep breath and enjoy the calm 🌿</p>
+  <p class="hint">Relax & pop the bubbles</p>
+
+  <div id="game-area"></div>
+
+  <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
