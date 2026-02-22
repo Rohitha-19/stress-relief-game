@@ -1,104 +1,55 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: linear-gradient(135deg, #c7f9cc, #80ed99);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(#c7f9cc, #80ed99);
+  font-family: Arial, sans-serif;
   text-align: center;
   color: #064635;
-  min-height: 100vh;
-  padding: 20px;
-  overflow-x: hidden;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 10px;
 }
 
-h1 {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-#emotion {
-  font-size: clamp(1.1rem, 4vw, 1.4rem);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.message {
-  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-  margin-bottom: 12px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.hint {
-  font-size: clamp(0.85rem, 3vw, 1rem);
-  font-style: italic;
-  color: #064635cc;
-  margin-bottom: 20px;
-}
-
+/* Responsive Game Area */
 #game-area {
-  width: 90vw;
-  max-width: 450px;
-  height: 50vh;
-  max-height: 500px;
-  background: rgba(233, 245, 219, 0.9);
-  margin: 0 auto 20px;
-  border-radius: 20px;
+  width: 90vw;              /* Takes 90% of screen width */
+  max-width: 400px;         /* But never exceeds 400px */
+  aspect-ratio: 1 / 1;      /* Keeps it square */
+  background: #e9f5db;
+  margin: 20px auto;
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.3);
-  touch-action: manipulation;
 }
 
+/* Responsive Bubble */
 .bubble {
-  width: clamp(35px, 8vw, 50px);
-  height: clamp(35px, 8vw, 50px);
-  background: linear-gradient(135deg, rgba(100, 200, 200, 0.8), rgba(100, 180, 220, 0.8));
+  width: 10%;               /* Scales with game area */
+  height: 10%;
+  min-width: 30px;          /* Minimum size */
+  min-height: 30px;
+  background: rgba(100, 200, 200, 0.7);
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-  border: 2px solid rgba(255,255,255,0.6);
 }
 
-.bubble:active {
-  transform: scale(0.85);
-  background: linear-gradient(135deg, rgba(100, 200, 200, 1), rgba(100, 180, 220, 1));
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+/* Text Styling */
+.hint {
+  font-style: italic;
+  font-size: 14px;
 }
 
-@media (hover: hover) {
-  .bubble:hover {
-    transform: scale(1.05);
-  }
+.message {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
+/* Extra Small Devices */
 @media (max-width: 480px) {
-  body {
-    padding: 15px;
+  .message {
+    font-size: 14px;
   }
-  
-  #game-area {
-    width: 95vw;
-    height: 45vh;
-  }
-}
 
-@media (max-height: 600px) {
-  #game-area {
-    height: 40vh;
-  }
-  
-  body {
-    padding: 10px;
+  .hint {
+    font-size: 12px;
   }
 }
